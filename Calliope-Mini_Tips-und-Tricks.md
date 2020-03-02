@@ -10,7 +10,14 @@
   - Nachteil ggü TigerJython: Was man eintippt ist nur temporär, also "weg", sobald man Calliope neu startet/Strom abstellt/...
 - Um unter Windows den aktuellen COM-Port herauszufinden, um mit Calliope zu sprechen, in der Powershell folgendes eingeben:
 
-        Get-WMIObject Win32_SerialPort
+        Get-WmiObject Win32_SerialPort | Select -ExpandProperty Name
+        
+    Das sollte eine Ausgabe wie bspw.
+    
+        Intel(R) Active Management Technology - SOL (COM3)
+        USB Serial Device (COM4)
+        
+    ergeben -- das `USB Serial Device` ist Calliope, also hier am `COM4`.
 
 
 ## Installationstips
